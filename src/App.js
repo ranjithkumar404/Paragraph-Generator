@@ -2,7 +2,7 @@ import { useState } from "react";
 import data from './data'
 
 function App() {
-  const [c, setC] = useState(0);
+  
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
   const submit=(e)=>{
