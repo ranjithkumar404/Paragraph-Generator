@@ -2,18 +2,20 @@ import { useState } from "react";
 import data from './data'
 
 function App() {
-  
+
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
-  const submit=(e)=>{
+  const submit = (e) => {
     e.preventDefault()
-    let x=count
-  if(x<0)
-  x=1
-  if(x >21)
-  x=21
-     setText(data.slice(0,x))
-    
+    let x = count
+    if (x < 0) {
+      x = 1
+    alert("Negative Values are not accepted!!")
+    }
+    if (x > 21)
+      x = 21
+    setText(data.slice(0, x))
+
   }
   return (
     <div className="App p-2 mt-6  flex item-center justify-center ">
@@ -26,22 +28,22 @@ function App() {
               )
             }} value={count} type="number" />
             <p className="text-xl font-semibold">Paragraph </p>
-           
-         </label>
+
+          </label>
           <button className="bg-green-500 font-semibold text-white p-3 rounded-md" >Generate</button>
         </form>
-          <p className="grid gap-2">{
-            text.map((i,a) => {
-              return (
-                <div key={a}>
-                  <p className="text-xl">{a+1}. {i}</p>
-                </div>
-              )
-            })
+        <p className="grid gap-2">{
+          text.map((i, a) => {
+            return (
+              <div key={a}>
+                <p className="text-xl">{a + 1}. {i}</p>
+              </div>
+            )
+          })
 
 
-          }</p>
-        
+        }</p>
+
       </div>
     </div>
   );
